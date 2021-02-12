@@ -4,9 +4,13 @@ pipeline {
         HOME = '.'
     }
     stages {
-        stage('Test') {
+        stage('install node modules') {
             steps {
                 sh 'npm install'
+            }
+        }
+        stage('Test') {
+            steps {
                 sh 'npx mocha ./tests/systemtest.js'
             }
         }
