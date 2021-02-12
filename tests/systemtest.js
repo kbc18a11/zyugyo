@@ -8,8 +8,6 @@ const cheerio = require('cheerio');
 describe('Web システムテスト', async function () {
     it('Access with GET Method return 200', async function () {
         request.get({ url: 'http://localhost:3000' }, function (err, response, body) {
-            console.log(response.statusCode);
-
             assert.equal(response.statusCode, 200);
         });
     });
