@@ -12,11 +12,19 @@ describe('Web システムテスト', async function () {
         });
     });
 
-    it('Testing input opr1:2 opr2:3', async function () {
+    it('/ testing input opr1:2 opr2:3', async function () {
         request.post({ url: 'http://localhost:3000', form: { opr1: 2, opr2: 3 } }, function (err, response, body) {
             const $ = cheerio.load(body);
-            const result = $('#result').text();
+            const result = $('#result1').text();
             assert.equal(result, 6);
+        });
+    });
+
+    it('/primenumber testing input num:7', async function () {
+        request.post({ url: 'http://localhost:3000/primenumber', form: { num: 7 } }, function (err, response, body) {
+            const $ = cheerio.load(body);
+            const result = $('#result2').text();
+            assert.equal(result, '7は素数やんけ！！');
         });
     });
 });
