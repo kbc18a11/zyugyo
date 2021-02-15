@@ -9,7 +9,12 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Test') {
+        stage('modulesTest') {
+            steps {
+                sh 'npx mocha ./tests/moduletest.js'
+            }
+        }
+        stage('systemTest') {
             steps {
                 sh 'npx mocha ./tests/systemtest.js'
             }

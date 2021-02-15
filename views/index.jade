@@ -13,4 +13,14 @@ block content
       input(type='submit' value='送信する')
   p
     div(id='calc')=output1
-    div(id='result')=output2
+    div(id='result1')=output2
+  h1= "素数判定"
+  form(method='POST' action='/primenumber')
+    p
+      | 素数
+      br
+      input(type='text' name='num')
+    p
+      input(type='submit' value='送信する')
+  p
+    div(id='result2')=answer
