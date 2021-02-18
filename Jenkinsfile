@@ -7,6 +7,7 @@ pipeline {
         stage('install node modules') {
             steps {
                 sh 'npm install'
+                sh 'npm start &'
             }
         }
         stage('modulesTest') {
